@@ -5,6 +5,13 @@
   "author": "Edson Jr",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "ts-node-dev ./src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "build": "tsc",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix"
+  },
   "dependencies": {
     "express": "^5.1.0"
   },
