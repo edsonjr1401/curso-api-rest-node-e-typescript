@@ -1,1 +1,5 @@
 /node_modules
+yanr-error.log
+
+/build
+.env

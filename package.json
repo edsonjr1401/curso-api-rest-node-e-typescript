@@ -13,6 +13,7 @@
     "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "http-status-codes": "^2.3.0"
   },
