@@ -52,4 +52,9 @@
 
     // Torna aces
 
-  }}
+  },
+    "include": ["src"],
+
+    "exclude": ["node_modules", "biuld"]  
+
+}
