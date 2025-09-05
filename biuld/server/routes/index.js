@@ -12,3 +12,4 @@ router.post('/teste', (req, res) => {
     console.log(req);
     return res.status(http_status_codes_1.StatusCodes.UNAUTHORIZED).json(req.body);
 });
+//# sourceMappingURL=index.js.map

@@ -1,13 +1,55 @@
 {
+  // Arquivo de configuração do TypeScript
+  // Mais detalhes em: https://aka.ms/tsconfig
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
+    // =========================
+    // Configuração de diretórios
+    // =========================
+
+    // Pasta de entrada do código-fonte
     "rootDir": "./src",
-    "outDir": "./dist",
+
+    // Pasta de saída do código compilado
+    "outDir": "./biuld",
+
+    // =========================
+    // Configuração do ambiente
+    // =========================
+
+    // Define o sistema de módulos usado no Node moderno (ESM)
+    "module": "nodenext",
+
+    // Define a versão de JavaScript alvo (usar recursos ESNext)
+    "target": "esnext",
+
+    // Define tipos globais a incluir (exemplo: "node" para usar tipagens do Node.js)
+    "types": [],
+
+    // Para projetos Node.js é recomendado:
+    // "lib": ["esnext"],   // Usa recursos do ESNext
+    // "types": ["node"],   // Inclui tipagens do Node
+    // (e instalar: npm install -D @types/node)
+
+    // =========================
+    // Saídas auxiliares
+    // =========================
+
+    // Gera arquivos .map para depuração
+    "sourceMap": true,
+
+    // Gera arquivos .d.ts para tipagem externa
+    "declaration": true,
+
+    // Gera mapas para arquivos de declaração
+    "declarationMap": true,
+
+    // =========================
+    // Regras de checagem mais rígidas
+    // =========================
+
+    // Ativa verificações estritas de tipos
     "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
-}
+
+    // Torna aces
+
+  }}
