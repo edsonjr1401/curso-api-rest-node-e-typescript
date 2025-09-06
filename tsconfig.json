@@ -20,13 +20,13 @@
     "module": "nodenext",
 
     // Define a versão de JavaScript alvo (usar recursos ESNext)
-    "target": "esnext",
+    "target": "ES2015",
 
     // Define tipos globais a incluir (exemplo: "node" para usar tipagens do Node.js)
     "types": [],
 
     // Para projetos Node.js é recomendado:
-    // "lib": ["esnext"],   // Usa recursos do ESNext
+     "lib": ["ES2015", "DOM"],   // Usa recursos do ESNext
     // "types": ["node"],   // Inclui tipagens do Node
     // (e instalar: npm install -D @types/node)
 
