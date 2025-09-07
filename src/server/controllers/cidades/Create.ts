@@ -13,11 +13,10 @@ const bodyValidation: yup.Schema<ICidade> = yup.object().shape({
   estado: yup.string().required().min(2),
 });
 
-export const createBodyValidator: RequestHandler = (req, res, next) => {
+export const createBodyValidator: RequestHandler = async (req, res, next) => {
   try {
-    // valida de forma síncrona
-    bodyValidation.validateSync(req.body, { abortEarly: false });
-    return next(); // se passou, chama o controller
+    await bodyValidation.validate(req.body, { abortEarly: false });
+    return next(); // se passou na validação, chama o controller
   } catch (err) {
     const yupError = err as yup.ValidationError; 
     const validationErrors: Record<string, string> = {};
