@@ -1,13 +1,25 @@
 import { RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { Schema, ValidationError } from 'yup';
+import { object, Schema, ValidationError } from 'yup';
 
-type TValidation = (scheme: Schema<any>) => RequestHandler;
+type TProperty =  'body' | 'header' | 'params' | 'query';
+
+type TALLSchemas = Record<TProperty, Schema<any>>;
+
+type TValidation = (Schema:Partial<TALLSchemas>) => RequestHandler;
 
 
-export const validation: TValidation = (scheme) => async (req, res, next) => {
+export const validation: TValidation = (schemas) => async (req, res, next) => {
+console.log(schemas);
+
+  Object.entries(schemas).forEach(([key, schemas]) => {
+
+
+  //return next();
+  
      try {
-       await scheme.validate(req.query, { abortEarly: false });
+      schemas.validate(req[key as TProperty], { abortEarly: false }); //
+
        return next();
      } catch (err) {
        const yupError = err as ValidationError;
@@ -18,6 +30,13 @@ export const validation: TValidation = (scheme) => async (req, res, next) => {
          errors[error.path] = error.message;
        });
 
+
+       
+
        return res.status(StatusCodes.BAD_REQUEST).json({ errors });
   }
+
+
+});
+
 };
