@@ -14,7 +14,7 @@ router.get('/', (_, res) => {
 });
 
 router.post(
-  '/Cidade',
+  '/cidade',
   CidadeController.createBodyValidator,
   CidadeController.createValidation,
   CidadeController.create
