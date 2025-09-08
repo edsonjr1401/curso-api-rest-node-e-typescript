@@ -2,6 +2,8 @@ import { Request, RequestHandler, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as yup from 'yup';
 
+import { validation } from '../../shared/middlewares';
+
 
 export interface ICidade {
   nome: string;
@@ -51,6 +53,9 @@ export const createQueryValidator: RequestHandler = async (req, res, next) => {
     return res.status(StatusCodes.BAD_REQUEST).json({ errors });
   }
 };
+
+
+export const createValidation = validation
 
 
 export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
