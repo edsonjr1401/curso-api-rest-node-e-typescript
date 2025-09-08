@@ -14,9 +14,9 @@ router.get('/', (_, res) => {
 });
 
 router.post(
-  '/cidades',
+  '/Cidade',
   CidadeController.createBodyValidator,
-  CidadeController.createQueryValidator,
+  CidadeController.createValidation,
   CidadeController.create
 );
 

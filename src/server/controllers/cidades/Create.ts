@@ -2,7 +2,7 @@ import { Request, RequestHandler, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as yup from 'yup';
 
-import { validation } from '../../shared/middlewares';
+import { validation } from '../../shared/middleware';
 
 
 export interface ICidade {
@@ -55,7 +55,7 @@ export const createQueryValidator: RequestHandler = async (req, res, next) => {
 };
 
 
-export const createValidation = validation
+export const createValidation = validation(queryValidation);
 
 
 export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
