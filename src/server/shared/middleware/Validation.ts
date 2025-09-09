@@ -41,7 +41,13 @@ const errorsResult: Record<string, Record<string, string>> = {};
 
 });
 
-        // return res.status(StatusCodes.BAD_REQUEST).json({ errors });
+if (Object.entries(errorsResult).length === 0) {
+  return next();
+} else {
+  return res.status(StatusCodes.BAD_REQUEST).json({ errors: errorsResult});
+
+}
+
 
   //return next();
 
