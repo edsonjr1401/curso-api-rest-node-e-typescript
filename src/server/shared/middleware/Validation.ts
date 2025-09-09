@@ -6,19 +6,20 @@ type TProperty =  'body' | 'header' | 'params' | 'query';
 
 type TALLSchemas = Record<TProperty, Schema<any>>;
 
-type TValidation = (Schema:Partial<TALLSchemas>) => RequestHandler;
+type TValidation = (Schemas:Partial<TALLSchemas>) => RequestHandler;
 
 
 export const validation: TValidation = (schemas) => async (req, res, next) => {
 console.log(schemas);
 
-  Object.entries(schemas).forEach(([key, schemas]) => {
+const errorsResult: Record<string, Record<string, string>> = {};
+
+  Object.entries(schemas).forEach(([key, schema]) => {
 
 
-  //return next();
   
      try {
-      schemas.validate(req[key as TProperty], { abortEarly: false }); //
+      schema.validate(req[key as TProperty], { abortEarly: false }); //
 
        return next();
      } catch (err) {
@@ -30,13 +31,18 @@ console.log(schemas);
          errors[error.path] = error.message;
        });
 
+       errorsResult[key] = errors;
+
 
        
 
-       return res.status(StatusCodes.BAD_REQUEST).json({ errors });
   }
 
 
 });
+
+        // return res.status(StatusCodes.BAD_REQUEST).json({ errors });
+
+  //return next();
 
 };
