@@ -23,7 +23,7 @@ export const createValidation = validation({
   query: yup.object().shape({
   filter: yup.string().required().min(3),
   }),  
-  })
+  });
 
 
 export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
