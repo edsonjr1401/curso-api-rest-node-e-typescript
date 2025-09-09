@@ -15,13 +15,13 @@ interface IFilter {
 
 
 export const createValidation = validation(( getSchema ) => ({
-  body: getSchema(yup.object().shape({
+  body: getSchema<ICidade>(yup.object().shape({
   nome: yup.string().required().min(3),
   estado: yup.string().required().min(3),
 })) ,
-  query: yup.object().shape({
+  query:getSchema<IFilter>(yup.object().shape({
    filter: yup.string().required().min(3),
-  }),  
+  })),  
   }));
 
 
