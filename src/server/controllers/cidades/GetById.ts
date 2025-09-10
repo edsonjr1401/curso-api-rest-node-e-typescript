@@ -6,15 +6,13 @@ import { validation } from '../../shared/middleware';
 
 
 export interface IParamsProps {
-  id?: number | null;
+  id?: number;
 }
 
 export const getByIdValidation = validation((getSchema) => ({
-  params: getSchema<IParamsProps>(
-    yup.object().shape({
-      id: yup.number().required().moreThan(0),
-    })
-  ),
+  params: getSchema<IParamsProps>(yup.object().shape({
+      id: yup.number().integer().required().moreThan(0),
+    })),
 }));
 
 export const getById = async (req: Request<IParamsProps>, res: Response) => {

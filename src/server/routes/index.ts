@@ -14,6 +14,7 @@ router.get('/', (_, res) => {
 });
 
 router.get('/cidade', CidadeController.getAllValidation,CidadeController.getAll);
+router.get('/cidade/:id', CidadeController.getByIdValidation,CidadeController.getById);
 router.post('/cidade', CidadeController.createValidation,CidadeController.create);
 
 
