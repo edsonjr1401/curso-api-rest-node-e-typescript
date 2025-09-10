@@ -20,4 +20,6 @@ router.put('/cidade/:id', CidadeController.updateByIdValidation,CidadeController
 router.delete('/cidade/:id', CidadeController.deleteByIdValidation,CidadeController.deleteById);
 
 
+
+
 export { router };

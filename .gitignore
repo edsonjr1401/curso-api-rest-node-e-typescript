@@ -2,4 +2,6 @@
 yanr-error.log
 
 /build
+/coverage
+
 .env
