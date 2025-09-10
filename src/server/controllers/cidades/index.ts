@@ -5,5 +5,5 @@ import * as getAll from './GetAll';
 
 export const CidadeController = {
   ...create,
-  ...getAll
+  ...getAll,
 };

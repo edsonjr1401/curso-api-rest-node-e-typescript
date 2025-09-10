@@ -13,12 +13,8 @@ router.get('/', (_, res) => {
   return res.send('Olá, DEV!');
 });
 
-router.post(
-  '/cidade',
-  CidadeController.createValidation,
-  CidadeController.create
-);
-
+router.get('/cidade', CidadeController.getAllValidation,CidadeController.getAll);
+router.post('/cidade', CidadeController.createValidation,CidadeController.create);
 
 
 export { router };
