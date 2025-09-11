@@ -23,7 +23,7 @@
     "target": "esnext",
 
     // Define tipos globais a incluir (exemplo: "node" para usar tipagens do Node.js)
-    "types": [],
+    "types": ["node", "jest"],
 
     // Para projetos Node.js é recomendado:
      "lib": ["ES2015", "DOM"],   // Usa recursos do ESNext
@@ -51,6 +51,9 @@
     "strict": true,
 
     // Torna aces
+
+     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
 
   },
     "include": ["src"],
