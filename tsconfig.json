@@ -10,7 +10,7 @@
     "rootDir": "./src",
 
     // Pasta de saída do código compilado
-    "outDir": "./biuld",
+    "outDir": "build",
 
     // =========================
     // Configuração do ambiente
@@ -55,6 +55,6 @@
   },
     "include": ["src"],
 
-    "exclude": ["node_modules", "biuld"]  
+    "exclude": ["node_modules", "build", "tests", "jest.setup.ts" ]  
 
 }
