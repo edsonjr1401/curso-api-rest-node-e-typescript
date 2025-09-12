@@ -4,6 +4,20 @@ import { testServer } from "../jest.setup";
 describe("Cidades - DeleteById", () => {
 
   it('Apagar registro', async () => {
+
+  const res1 = await testServer
+    .post('/cidades')
+    .send({ nome: 'Caixias do Sul' });  
+
+
+  expect(res1.statusCode).toEqual(StatusCodes.CREATED);
+
+const resApagada = await testServer 
+  .delete(`/cidade/${res1.body}`)
+  .send();
+
+  expect(resApagada.statusCode).toEqual(StatusCodes.NO_CONTENT);
+
    });
 
    it('Tenta apagar registro que não existe', async () => {
