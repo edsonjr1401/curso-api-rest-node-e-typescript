@@ -1,12 +1,12 @@
 import { StatusCodes } from "http-status-codes";
 import { testServer } from "../jest.setup";
 
-describe("Cidades - DeleteById", () => {
+describe("Cidade - DeleteById", () => {
 
   it('Apagar registro', async () => {
 
   const res1 = await testServer
-    .post('/cidades')
+    .post('/cidade')
     .send({ nome: 'Caixias do Sul' });  
 
 
@@ -23,7 +23,7 @@ const resApagada = await testServer
    it('Tenta apagar registro que não existe', async () => {
 
     const res1 = await testServer
-    .delete('/cidades/99999')
+    .delete('/cidade/99999')
     .send();
    
 
