@@ -7,9 +7,23 @@ import { getById } from "../../src/server/controllers/cidades/GetById";
 describe ('Cidade - GetById', () => {
 
   it('Busca registro por id', async () => {
+     const res1 = await testServer
+      .post('/cidades')
+      .send({ nome: 'Caxias do sul' });
+
+    expect(res1.statusCode).toEqual(StatusCodes.CREATED);
+
+    const resBuscada = await testServer
+      .get(`/cidades/${res1.body}`)
+      .send();
+
+    expect(resBuscada.statusCode).toEqual(StatusCodes.OK);
+    expect(resBuscada.body).toHaveProperty('nome');
   });
-  it('Tentar buscar regiatros que não exiate', async => () {
-    const res1 = await testServer
+
+
+  it('Tentar buscar regiatros que não exiate', async() =>  {
+  const res1 = await testServer
     .get('/cidade/99999')
     .send();
 
