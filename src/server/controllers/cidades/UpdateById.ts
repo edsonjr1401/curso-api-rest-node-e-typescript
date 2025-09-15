@@ -5,12 +5,13 @@ import * as yup from 'yup';
 import { validation } from '../../shared/middleware';
 
 
-interface IParamProps {
+ export interface IParamProps {
   id?: number;
 }
-interface IBodyProps {
+export interface IBodyProps {
   nome: string;
 }
+
 export const updateByIdValidation = validation(getSchema => ({
   body: getSchema<IBodyProps>(yup.object().shape({
     nome: yup.string().required().min(3),

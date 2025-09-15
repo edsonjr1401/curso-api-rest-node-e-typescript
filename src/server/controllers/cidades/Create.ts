@@ -4,9 +4,13 @@ import * as yup from 'yup';
 import { validation } from '../../shared/middleware';
 
 
-interface ICidade {
+export interface ICidade {
   nome: string;
 }
+export interface IBodyProps {
+  nome: string;
+}
+
 export const createValidation = validation((getSchema) => ({
   body: getSchema<ICidade>(yup.object().shape({
     nome: yup.string().required().min(3),
