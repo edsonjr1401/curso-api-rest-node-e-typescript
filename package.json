@@ -37,6 +37,8 @@
     "jest": "29",
     "jiti": "^2.5.1",
     "mysql2": "^3.14.5",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "supertest": "^7.1.4",
     "ts-jest": "29",
     "ts-node-dev": "^2.0.0",

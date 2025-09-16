@@ -1,0 +1,1 @@
+{"version":3,"file":"Environment.d.ts","sourceRoot":"","sources":["../../../../src/server/database/knex/Environment.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,MAAM,CAAC;AAE5B,eAAO,MAAM,WAAW,EAAE,IAAI,CAAC,MAO9B,CAAC;AAEF,eAAO,MAAM,IAAI,EAAE,IAAI,CAAC,MAAW,CAAC;AAEpC,eAAO,MAAM,UAAU,EAAC,IAAI,CAAC,MAAW,CAAC"}
