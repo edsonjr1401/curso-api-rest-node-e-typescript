@@ -20,6 +20,7 @@
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "http-status-codes": "^2.3.0",
+    "knex": "^3.1.0",
     "yup": "^1.7.0"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "globals": "^16.3.0",
     "jest": "29",
     "jiti": "^2.5.1",
+    "mysql2": "^3.14.5",
     "supertest": "^7.1.4",
     "ts-jest": "29",
     "ts-node-dev": "^2.0.0",
